@@ -47,3 +47,7 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 set undofile
+
+for dir in ['backup', 'swap', 'undo']
+  call mkdir($HOME . '/.vim/' . dir, 'p')
+endfor
