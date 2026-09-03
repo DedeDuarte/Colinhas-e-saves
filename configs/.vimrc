@@ -1,5 +1,7 @@
+" Version: 1.4
 " Plugins
 filetype plugin indent on
+
 
 
 " Syntax
@@ -7,8 +9,9 @@ syntax on
 colorscheme desert
 
 
+
 " Numero das linhas
-set relativenumber
+set number
 set number
 
 
@@ -31,12 +34,14 @@ set smarttab
 set autoindent
 
 
+
 " Encontrar texto
 set showcmd
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+
 
 
 " Backup
