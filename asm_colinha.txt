@@ -1,0 +1,46 @@
+======================
+===== Compilando =====
+======================
+1. nasm -f elf64 -o __name__.o __nome__.asm
+        nsam  -> Netwide Assembler ("compilador" de assembly)
+        -f    -> no formato:
+        elf64 -> Executable and Linkable Format 64bits (elf32 ou win64 ou macho64)
+
+2. ld __name__.o -o __name__
+        ld -> Link Editor (Tranforma .o em executavel)
+
+3. ./__name__
+
+
+=========================
+===== Registradores =====
+=========================
+Registradores totais:
+    rax rbx rcx rdx
+    rsi rdi rbp rsp
+    r8  r9  r10 r11 r12 r13 r14 r15
+
+Registradores de argumentos:
+    ID: rax
+     1: rdi    2: rsi    3: rdx
+     4: r10    5: r8     6: r9
+
+Registradores livres:
+    rbx
+    r12-15
+
+====================
+===== Syscalls =====
+====================
+sys_read
+    rax, 0            -> sys_read
+    rdi, 0            -> stdin
+    rsi, buffer       -> Buffer onde erá armazenado o conteudo
+    rdx, size(buffer) -> Tamanho do buffer
+
+sys_write
+    rax, 1            -> sys_write
+    rdi, 1            -> stdout (rdi 2 = stderr)
+    rsi, buffer       -> Buffer que contem o texto
+    rdx, size(buffer) -> Tamanho do buffer
+
